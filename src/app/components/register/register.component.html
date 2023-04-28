@@ -1,0 +1,50 @@
+<div class="container text-center pt-5">
+    <div class="row g-0">
+        <div class="col-lg-6">
+            <img src="assets/main.jpeg" class="w-100 h-100" alt="">
+        </div>
+        <div class="col-lg-6 bg-custom p-3">
+            <h3 class="text-main-color my-3">Creat My Acount!</h3>
+            <form [formGroup]="registrationForm" (ngSubmit)="handleRegister(registrationForm)" class="d-flex justify-content-between flex-wrap">
+                <input formControlName="name" placeholder="First Name" class="name-Input form-control border-0 my-2 bg-deep-dark" type="text">
+                <input placeholder="Last Name" class="name-Input form-control border-0 my-2 bg-deep-dark" type="text">
+                <div *ngIf="registrationForm.get('name')?.errors && registrationForm.get('name')?.touched" class="alert p-2 bg-danger">
+                    <p *ngIf="registrationForm.get('name')?.getError('minlength')" class="m-0">name Minimum Length is 3</p>
+                    <p *ngIf="registrationForm.get('name')?.getError('maxlength')" class="m-0">name maximum Length is 10</p>
+                    <p *ngIf="registrationForm.get('name')?.getError('required')" class="m-0">name is required</p>
+                </div>
+                <input formControlName="email" placeholder="Email" class="form-control border-0 w-100 my-2 bg-deep-dark" type="email">
+                <div *ngIf="registrationForm.get('email')?.errors && registrationForm.get('email')?.touched" class="alert p-2 bg-danger">
+                    <p *ngIf="registrationForm.get('email')?.getError('email')" class="m-0">Invalid Email</p>
+                    <p *ngIf="registrationForm.get('email')?.getError('required')" class="m-0">email is required</p>
+                </div>
+                <input formControlName="password" placeholder="Password" class="form-control border-0 w-100 my-2 bg-deep-dark" type="password">
+                <div *ngIf="registrationForm.get('password')?.errors && registrationForm.get('password')?.touched" class="alert p-2 bg-danger">
+                    <p *ngIf="registrationForm.get('password')?.getError('pattern')" class="m-0">password must start with a capital letter and minimum 5 characters</p>
+                    <p *ngIf="registrationForm.get('password')?.getError('required')" class="m-0">password is required</p>
+                </div>
+                <input formControlName="rePassword" placeholder="rePassword" class="form-control border-0 w-100 my-2 bg-deep-dark" type="password">
+                <div *ngIf="registrationForm.get('rePassword')?.errors && registrationForm.get('rePassword')?.touched" class="alert p-2 bg-danger">
+                    <p *ngIf="registrationForm.get('rePassword')?.getError('pattern')" class="m-0">rePassword must start with a capital letter and minimum 5 characters</p>
+                    <p *ngIf="registrationForm.get('rePassword')?.getError('required')" class="m-0">rePassword is required</p>
+                </div>
+                <input placeholder="Age" class="form-control border-0 w-100 my-2 bg-deep-dark" type="number">
+                <input formControlName="phone" placeholder="Phone" class="form-control border-0 w-100 my-2 bg-deep-dark" type="tel">
+                <div *ngIf="registrationForm.get('phone')?.errors && registrationForm.get('phone')?.touched" class="alert p-2 bg-danger">
+                    <p *ngIf="registrationForm.get('phone')?.getError('pattern')" class="m-0">phone must be an Egyption mobile number</p>
+                    <p *ngIf="registrationForm.get('phone')?.getError('required')" class="m-0">phone is required</p>
+                </div>
+                <button class="btn w-100 my-2 btn-outline-secondary text-white border-dark" type="submit" >
+                    <span *ngIf="!isLoading">Register</span>
+                    <i *ngIf="isLoading" class="fa-solid fa-atom fa-spin"></i>
+                </button>
+                <div *ngIf="apiError" class="alert alert-danger">
+                    {{apiError}}
+                </div>
+            </form>
+            <p class="text-secondary small my-2">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" class="text-secondary" target="_blank">Privacy Policy</a>  and <a href="https://policies.google.com/terms" class="text-secondary" target="_blank">Terms of Service</a>  apply.</p>
+            <div class=" my-3 h-line"></div>
+            <p class="text-main-color">Already a member? <a class="text-decoration-none link-color" routerLink="/login">Login <i class="fa-solid fa-chevron-right fa-xs"></i></a></p>
+        </div>
+    </div>
+</div>

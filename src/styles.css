@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+
+:root{
+    --text-color:#AAA595;
+    --bg-custom:#32383E;
+    --bg-deep-dark:#1C1E22;
+    --custom-blue:#477FA8
+}
+
+.text-main-color{
+    color: var(--text-color);
+}
+.bg-custom{
+    background-color: var(--bg-custom);
+}
+.bg-deep-dark{
+ background-color: var(--bg-deep-dark);
+}
+
+.name-Input{
+    width: 49%;
+}
+.form-control:focus{
+    background-color: var(--bg-deep-dark);
+}
+.h-line{
+    width: 90%;
+    height: 1px;
+    margin:auto;
+    background-color:#aaa5955e;
+
+}
+.link-color{
+    color: var(--custom-blue);
+}
+.pointer-cursor{
+    cursor: pointer;
+}
+.game-card{
+    background-color: var(--bg-custom);
+    transition: scale 0.5s;
+    cursor: pointer;
+    border-bottom-left-radius:5px ;
+    border-bottom-right-radius:5px ;
+
+}
+.game-card:hover{
+    scale: 1.05;
+}
+.home-panner{
+    background: url(assets/paladins.b44d33d6e7ee1ba8.png);
+}
+.free-game{
+    background-color: var(--custom-blue);
+    border-radius: 5px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px ;
+    font-weight: 500;
+}
