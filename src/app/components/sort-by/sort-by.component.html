@@ -47,8 +47,10 @@
   </div>
 <div class="container p-5">
     <div class="games-container">
+        <input placeholder="Search by Game name..." [(ngModel)]="searchTerm" type="text" class="search mx-auto my-5 w-75 form-control">
+
             <div class="row g-4 mt-4 ">
-                <div *ngFor="let game of subGames" [title]="'available on '+ game.platform" routerLink="/details/{{game.id}}" class="col-lg-3 col-md-6">
+                <div *ngFor="let game of subGames|search:searchTerm" [title]="'available on '+ game.platform" routerLink="/details/{{game.id}}" class="col-lg-3 col-md-6">
                     <div class="game-card text-center p-0">
                         <img [src]="game.thumbnail" class="w-100" alt="">
                         <div class="game-details px-4 py-2 d-flex justify-content-between flex-wrap">

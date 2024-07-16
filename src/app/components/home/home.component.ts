@@ -8,6 +8,8 @@ import { GamesService } from 'src/app/games.service';
 })
 export class HomeComponent implements OnInit{
   games:any[]=[]
+  searchTerm:string = ''
+
  constructor(private _GamesService:GamesService){}
   ngOnInit(): void {
       this._GamesService.getGames().subscribe((response)=>{

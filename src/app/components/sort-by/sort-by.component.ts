@@ -13,6 +13,8 @@ export class SortByComponent implements OnInit {
   isLoading:boolean = true
   allGames:any[]=[]
   subGames:any[]=[]
+  searchTerm:string = ''
+
   subGamesLimit:number = 20
   ngOnInit(): void {
     this._ActivatedRoute.paramMap.subscribe((params)=>{

@@ -11,12 +11,13 @@ import { PlatformsComponent } from './components/platforms/platforms.component';
 import { SortByComponent } from './components/sort-by/sort-by.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {CarouselModule} from 'ngx-owl-carousel-o'
+import {CarouselModule} from 'ngx-owl-carousel-o';
+import { SearchPipe } from './search.pipe'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {CarouselModule} from 'ngx-owl-carousel-o'
     CategoriesComponent,
     NavbarComponent,
     NotfoundComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -39,8 +41,8 @@ import {CarouselModule} from 'ngx-owl-carousel-o'
     HttpClientModule,
     RouterModule,
     BrowserAnimationsModule,
-    CarouselModule
-    
+    CarouselModule,
+    FormsModule
 
   ],
   providers: [],

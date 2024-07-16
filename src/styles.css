@@ -60,3 +60,6 @@
     padding: 5px 10px ;
     font-weight: 500;
 }
+.search:focus{
+    background-color: white;
+}

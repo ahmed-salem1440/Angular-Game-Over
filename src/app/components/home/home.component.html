@@ -10,7 +10,7 @@
         Personalized Recommendations
     </h2>
         <div class="row g-4 mt-4">
-            <div *ngFor="let game of games" routerLink="/details/{{game.id}}" class="col-md-4">
+            <div *ngFor="let game of games|search:searchTerm" routerLink="/details/{{game.id}}" class="col-md-4">
                 <div class="game-card text-center p-0">
                     <img [src]="game.thumbnail" class="w-100" alt="">
                     <div class="game-details px-4 py-2 d-flex justify-content-between ">

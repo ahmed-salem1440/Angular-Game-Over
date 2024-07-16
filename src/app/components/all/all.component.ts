@@ -10,6 +10,8 @@ export class AllComponent implements OnInit{
 isLoading:boolean = true
 allGames:any[]=[]
 subGames:any[]=[]
+searchTerm:string = ''
+
 subGamesLimit:number = 20
 
 constructor(private _GamesService:GamesService){}
