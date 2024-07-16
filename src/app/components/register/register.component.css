@@ -1,0 +1,9 @@
+button{
+    background-color: #3A3F44;
+}
+button:hover{
+    background-color: #3A3F44;
+}
+input , input:focus{
+    color:#fff
+}

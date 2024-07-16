@@ -1,0 +1,32 @@
+#gameOver{
+    font-family:'Just Another Hand', cursive;
+    font-size: 24px;
+}
+#gameOver:hover{
+    color: white;
+}
+a:hover{
+    color: var(--text-color);
+}
+button{
+    padding: 5px 10px;
+    color:var(--custom-blue);
+    background-color: transparent;
+    border: 1px solid var(--custom-blue);
+    border-radius: 5px;
+}
+
+.navbar{
+    min-height: 50px !important;
+}
+.active-link{
+    color: var(--text-color) !important;
+    border-width: 0 !important;
+}
+.non-active{
+border: var(--custom-blue) 1px solid;
+border-radius:5px;
+color: var(--custom-blue);
+text-decoration: none;
+
+}

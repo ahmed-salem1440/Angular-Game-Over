@@ -1,0 +1,27 @@
+<div class="container text-center pt-5">
+    <div class="row g-0">
+        <div class="col-lg-6">
+            <img src="assets/main.jpeg" class="w-100 h-100" alt="">
+        </div>
+        <div class="col-lg-6 bg-custom p-5">
+            <div class="img-container">
+                <img class="w-100" src="assets/logo.png" alt="">
+            </div>
+            <h3 class="text-main-color my-3">Log in to GameOver</h3>
+            <form (ngSubmit)="handleLogin(loginForm)" [formGroup]="loginForm" class="d-flex justify-content-between flex-wrap">
+                <input class="form-control border-0 w-100 my-2 bg-deep-dark" placeholder="Email" type="email" formControlName="email">
+                <input class="form-control border-0 w-100 my-2 bg-deep-dark" placeholder="Password" type="password" formControlName="password">
+                <button class="btn w-100 my-2 btn-outline-secondary text-white border-dark" type="submit" >
+                    <span *ngIf="!isLoading">Login</span>
+                    <i *ngIf="isLoading" class="fa-solid fa-atom fa-spin"></i>
+                </button>
+                <div *ngIf="apiError" class="alert alert-danger">
+                    {{apiError}}
+                </div>
+            </form>
+            <div class=" my-3 h-line"></div>
+            <a class="text-decoration-none pointer-cursor link-color small" (click)="forgetPassword()">Forgot Password?</a>
+            <p class="text-main-color">Not a member yet? <a class="text-decoration-none link-color" routerLink="/register"> Create An account <i class="fa-solid fa-chevron-right fa-xs"></i></a></p>
+        </div>
+    </div>
+</div>
